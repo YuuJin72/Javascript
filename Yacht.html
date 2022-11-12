@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href="Yacht.css">
+    <title>Yacht</title>
+</head>
+<body>
+    <div class="all">
+      <div class="Dice_Place">
+          <div class="View_Dice">
+            <table class="Dice_Table">
+              <tr>
+                <td class="Dice" id="Dicet1"><img src="Image/white.png" id="Dice1"></td>
+                <td class="Dice" id="Dicet2"><img src="Image/white.png" id="Dice2"></td>
+                <td class="Dice" id="Dicet3"><img src="Image/white.png" id="Dice3"></td>
+                <td class="Dice" id="Dicet4"><img src="Image/white.png" id="Dice4"></td>
+                <td class="Dice" id="Dicet5"><img src="Image/white.png" id="Dice5"></td>
+              </tr>
+              <tr>
+                <td class="Check_hold"><input type="checkbox" name="Checkbox1" id="Checked1"></td>
+                <td class="Check_hold"><input type="checkbox" name="Checkbox2" id="Checked2"></td>
+                <td class="Check_hold"><input type="checkbox" name="Checkbox3" id="Checked3"></td>
+                <td class="Check_hold"><input type="checkbox" name="Checkbox4" id="Checked4"></td>
+                <td class="Check_hold"><input type="checkbox" name="Checkbox5" id="Checked5"></td>
+              </tr>
+            </table>
+          </div>
+      </div>
+      <div class="Btn_Place">
+          <button class="Btn_Roll" id="start">Game Start</button>
+          <button class="Btn_Roll" id="roll">ROLL!!!</button>
+          <button class="Btn_Roll" id="help">Help</button>
+          <div class="Remain_Text" id="Remain_Text"></div>
+      </div>
+
+      <div class="Status_Text" id="Status_Text"></div>
+      <div class="Player_Text" id="Player_Text"></div>
+    
+    <div class="Score_Place">
+        <table class="Score_Table">
+            <tr>
+              <td class="Row_Title"></td>
+              <td class="Row_Title">Player1</td>
+              <td class="Row_Title">Player2</td>
+              <td class="Row_Title">Player3</td>
+              <td class="Row_Title">Player4</td>
+            </tr>
+            <tr>
+              <td class="Row_Title">Ace</td>
+              <td class="Score_data_P1" id="AceP1"></td>
+              <td class="Score_data_P2" id="AceP2"></td>
+              <td class="Score_data_P3" id="AceP3"></td>
+              <td class="Score_data_P4" id="AceP4"></td>
+            </tr>
+            <tr>
+                <td class="Row_Title">Deuces</td>
+                <td class="Score_data_P1" id="DeucesP1"></td>
+                <td class="Score_data_P2" id="DeucesP2"></td>
+                <td class="Score_data_P3" id="DeucesP3"></td>
+                <td class="Score_data_P4" id="DeucesP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">Threes</td>
+                <td class="Score_data_P1" id="ThreesP1"></td>
+                <td class="Score_data_P2" id="ThreesP2"></td>
+                <td class="Score_data_P3" id="ThreesP3"></td>
+                <td class="Score_data_P4" id="ThreesP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">Fours</td>
+                <td class="Score_data_P1" id="FoursP1"></td>
+                <td class="Score_data_P2" id="FoursP2"></td>
+                <td class="Score_data_P3" id="FoursP3"></td>
+                <td class="Score_data_P4" id="FoursP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">Fives</td>
+                <td class="Score_data_P1" id="FivesP1"></td>
+                <td class="Score_data_P2" id="FivesP2"></td>
+                <td class="Score_data_P3" id="FivesP3"></td>
+                <td class="Score_data_P4" id="FivesP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">Sixes</td>
+                <td class="Score_data_P1" id="SixesP1"></td>
+                <td class="Score_data_P2" id="SixesP2"></td>
+                <td class="Score_data_P3" id="SixesP3"></td>
+                <td class="Score_data_P4" id="SixesP4"></td>
+              </tr>
+        </table>
+        <table class="Score_Table">
+            <tr>
+                <td class="Row_Title">Bonus!! +35<br>(X ≥ 63)</td>
+                <td class="Score_Subtotal" id="SubtotalP1"></td>
+                <td class="Score_Subtotal" id="SubtotalP2"></td>
+                <td class="Score_Subtotal" id="SubtotalP3"></td>
+                <td class="Score_Subtotal" id="SubtotalP4"></td>
+            </tr>
+        </table>
+        <table class="Score_Table">
+            <tr>
+              <td class="Row_Title">Choice</td>
+              <td class="Score_data_P1" id="ChoiceP1"></td>
+              <td class="Score_data_P2" id="ChoiceP2"></td>
+              <td class="Score_data_P3" id="ChoiceP3"></td>
+              <td class="Score_data_P4" id="ChoiceP4"></td>
+            </tr>
+            <tr>
+                <td class="Row_Title">Four of Kind</td>
+                <td class="Score_data_P1" id="FourofKindP1"></td>
+                <td class="Score_data_P2" id="FourofKindP2"></td>
+                <td class="Score_data_P3" id="FourofKindP3"></td>
+                <td class="Score_data_P4" id="FourofKindP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">Full House</td>
+                <td class="Score_data_P1" id="FullHouseP1"></td>
+                <td class="Score_data_P2" id="FullHouseP2"></td>
+                <td class="Score_data_P3" id="FullHouseP3"></td>
+                <td class="Score_data_P4" id="FullHouseP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">S. Straight</td>
+                <td class="Score_data_P1" id="SStraightP1"></td>
+                <td class="Score_data_P2" id="SStraightP2"></td>
+                <td class="Score_data_P3" id="SStraightP3"></td>
+                <td class="Score_data_P4" id="SStraightP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">L. Straight</td>
+                <td class="Score_data_P1" id="LStraightP1"></td>
+                <td class="Score_data_P2" id="LStraightP2"></td>
+                <td class="Score_data_P3" id="LStraightP3"></td>
+                <td class="Score_data_P4" id="LStraightP4"></td>
+              </tr>
+              <tr>
+                <td class="Row_Title">Yacht</td>
+                <td class="Score_data_P1" id="YachtP1"></td>
+                <td class="Score_data_P2" id="YachtP2"></td>
+                <td class="Score_data_P3" id="YachtP3"></td>
+                <td class="Score_data_P4" id="YachtP4"></td>
+              </tr>
+        </table>
+        <table class="Score_Table">
+          <tr>
+            <td class="Row_Title">Total</td>
+            <td class="Score_data_P1" id="TotalP1">0</td>
+            <td class="Score_data_P2" id="TotalP2">0</td>
+            <td class="Score_data_P3" id="TotalP3">0</td>
+            <td class="Score_data_P4" id="TotalP4">0</td>
+          </tr> 
+        </table>
+    </div>
+  </div>
+    <script type="text/javascript" src="Yacht.js"></script>
+</body>
+</html>

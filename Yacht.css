@@ -1,0 +1,193 @@
+img{
+    width: 100%;
+    height: 100%;
+}
+.all{
+    background-color: #CCCCCC;
+    width: 980px;
+    height: 1150px;
+}
+.Dice_Place{
+    background-color: #DDDDDD;
+    margin: 30px;
+    float: left;
+    width: 700px;
+    height: 350px;
+}
+.View_Dice{
+    background-color: #FFFFFF;
+    margin: auto;
+    margin-top: 30px;
+    width: 600px;
+    height: 280px;
+}
+.Dice{
+    border: black 2px solid;
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 110px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.Check_hold{
+    width: 120px;
+    height: 110px;
+    padding: 5px;
+    text-align: center;
+}
+input[type="checkbox"] {
+    width: 30px; 
+    height: 30px; 
+  }
+.Status_Text{
+    background-color: #EEEEEE;
+    text-align: center;
+    margin-left: 30px;
+    float: left;
+    width: 700px;
+    height: 30px;
+    font-weight: 600;
+}
+.Player_Text{
+    background-color: #EEEEEE;
+    margin-left: 60px;
+    text-align: center;
+    float: left;
+    width: 150px;
+    height: 30px;
+    font-weight: 600;
+}
+
+.Score_Place{
+    background-color: #EEEEEE;
+    margin: 30px;
+    float: left;
+    width: 910px;
+    height: 670px;
+}
+
+.Btn_Place{
+    background-color: #DDDDDD;
+    margin: 30px;
+    float: left;
+    width: 150px;
+    height: 350px;
+}
+.Remain_Text{
+    background-color: #EEEEEE;
+    margin-left: 15px;
+    margin-top: 80px;
+    width: 120px;
+    height: 30px;
+    font-weight: 600;
+}
+
+.Btn_Roll{
+    width: 120px;
+    height: 60px;
+    display: block;
+    margin: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.Btn_Roll:hover{
+    background-color: #333333;
+    color: #FFFFFF;
+    transition: all 0.1s ease-in-out;
+    border: black 3px solid;
+}
+
+.Score_Table{
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 99%;
+    background-color: #EEEEEE;
+}
+
+.Row_Title{
+    width: 120px;
+    height: 20px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Score_data_P1{
+    border: black 2px solid;
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.Score_data_P2{
+    border: black 2px solid;
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.Score_data_P3{
+    border: black 2px solid;
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.Score_data_P4{
+    border: black 2px solid;
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.Score_Subtotal{
+    border: black 2px solid;
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.Score_data_P1:hover{
+    background-color: #333333;
+    color: #FFFFFF;
+    transition: all 0.1s ease-in-out;
+}
+.Score_data_P2:hover{
+    background-color: #333333;
+    color: #FFFFFF;
+    transition: all 0.1s ease-in-out;
+}
+.Score_data_P3:hover{
+    background-color: #333333;
+    color: #FFFFFF;
+    transition: all 0.1s ease-in-out;
+}
+.Score_data_P4:hover{
+    background-color: #333333;
+    color: #FFFFFF;
+    transition: all 0.1s ease-in-out;
+}
+#blocked{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
