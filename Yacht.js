@@ -81,11 +81,6 @@ function playerturn()
 // ============== 주사위 굴리기 ===============
 roll.addEventListener("click", rolldice)
 function rolldice(){
-    console.log("Player1 : ",Player1)
-    console.log("Player2 : ",Player2)
-    console.log("Player3 : ",Player3)
-    console.log("Player4 : ",Player4)
-    console.log("Remain : ",Remain)
     if(Playing_Status == true && RemainDice > 0)
     {
         for (var i = 0; i < 5; i++)
@@ -176,6 +171,7 @@ function special_reset()
 function afterrecord() //점수 결정 후 초기화함수
 {
     //총점 기록
+    chk_subtotal()
     document.getElementById("TotalP1").innerHTML = Player1
     document.getElementById("TotalP2").innerHTML = Player2
     document.getElementById("TotalP3").innerHTML = Player3
@@ -201,22 +197,26 @@ function afterrecord() //점수 결정 후 초기화함수
     document.getElementById('Dicet4').style.border="2px solid black";
     document.getElementById('Dicet5').style.border="2px solid black";
     
-    chk_subtotal()
+    
 
     Remain = Remain - 1
     alert("Turn Change")
     if(Remain == 0)
     {
+        console.log(Player1)
+        console.log(Player2)
+        console.log(Player3)
+        console.log(Player4)
         var maxarr = []
-        Player1 = maxarr[0]
-        Player2 = maxarr[1]
-        Player3 = maxarr[2]
-        Player4 = maxarr[3]
+        maxarr[0] = Player1
+        maxarr[1] = Player2
+        maxarr[2] = Player3
+        maxarr[3] = Player4
         var max = 0
         max = (Player1 > Player2)? Player1 : Player2;
         max = (max > Player3)? max : Player3;
         max = (max > Player4)? max : Player4;
-
+        console.log(max)
         for (var j = 0; j < 4; j++)
         {
             if(max == maxarr[j])
