@@ -124,11 +124,11 @@ function rolldice(){
         DiceSValue.sort()
         displaydice()
         chk_special()
-        console.log(FourofKind)
-        console.log(FullHouse)
-        console.log(SStraight)
-        console.log(LStraight)
-        console.log(Yacht)
+        console.log("FourofKind : ",FourofKind)
+        console.log("FullHouse : ",FullHouse)
+        console.log("SStraight : ",SStraight)
+        console.log("LStraight : ",LStraight)
+        console.log("Yacht : ",Yacht)
         RemainDice = RemainDice - 1
         document.getElementById("Remain_Text").innerHTML = ("Remain Roll : "+RemainDice)
     }
