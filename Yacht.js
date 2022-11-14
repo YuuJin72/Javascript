@@ -176,6 +176,8 @@ function chk_special()
     if(count == 4)
     {
         document.getElementById('Status_Text').innerHTML = ("☆★☆★Yacht!!!!☆★☆★")
+        FourofKind = true
+        FullHouse = true
         Yacht = true
     }
     
@@ -188,7 +190,9 @@ function chk_special()
     if(scount == 4)
     {
         document.getElementById('Status_Text').innerHTML = ("☆★Large Straight!!☆★")
+        SStraight = true
         LStraight = true
+        
     }
 }
 
