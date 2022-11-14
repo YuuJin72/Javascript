@@ -36,10 +36,11 @@ var Yacht = false
 
 //주사위 조작변수
 var RemainDice = 3
-var Remain = 48
+var Remain = 0
 
 //플레이어턴 체크
 var Turn = 0
+var Player_num = 0
 
 //이벤트리스너 설정
 const startbtn = document.querySelector("#start");
@@ -56,25 +57,54 @@ startbtn.addEventListener("click", start_fnc)
 function start_fnc(){
     if(Playing_Status == false)
     {
-        Playing_Status = true
-        playstart()
+        playercheck()
     }
     else
     {
         alert("게임이 진행중입니다.")
     }
 }
+function playercheck()
+{
+    var a = prompt("플레이어 숫자를 입력해주세요 최소 2명 ~ 최대 4명")
+    Player_num = Number(a)
+    if(Player_num == 2)
+    {
+        Playing_Status = true
+        Remain = (12 * Player_num)
+        document.getElementById("Player3").innerHTML = ""
+        document.getElementById("Player4").innerHTML = ""
+        playstart()
+    }
+    else if(Player_num == 3)
+    {
+        Playing_Status = true
+        Remain = (12 * Player_num)
+        document.getElementById("Player4").innerHTML = ""
+        playstart()
+    }
+    else if(Player_num == 4)
+    {
+        Playing_Status = true
+        Remain = (12 * Player_num)
+        playstart()
+    }
+    else{
+        alert("올바른 값이 아닙니다. 다시 입력해주세요.")
+    }
+}
 
 // ============== 게임 진행 루틴 ===============
 function playstart()
 {
+    
     playerturn()
     rolldice()
 }
     
 function playerturn()
 {
-    Turn = (Turn % 4) + 1
+    Turn = (Turn % Player_num) + 1
     document.getElementById("Player_Text").innerHTML = "Player"+ Turn + " 's Turn!"
 }
 
@@ -94,6 +124,11 @@ function rolldice(){
         DiceSValue.sort()
         displaydice()
         chk_special()
+        console.log(FourofKind)
+        console.log(FullHouse)
+        console.log(SStraight)
+        console.log(LStraight)
+        console.log(Yacht)
         RemainDice = RemainDice - 1
         document.getElementById("Remain_Text").innerHTML = ("Remain Roll : "+RemainDice)
     }
@@ -128,12 +163,12 @@ function chk_special()
         }
     }
     //Four of Kind, Full House, Yacht
-    if(count == 3 && ((DiceSValue[3] != DiceSValue[4]) || (DiceSValue[0] != DiceSValue[1])))
+    if(count >= 3 && ((DiceSValue[3] != DiceSValue[4]) || (DiceSValue[0] != DiceSValue[1])))
     {
         document.getElementById('Status_Text').innerHTML = ("☆★Four of Kind!!☆★")
         FourofKind = true
     }
-    if(count == 3 && ((DiceSValue[1] != DiceSValue[2]) || (DiceSValue[2] != DiceSValue[3])))
+    if(count >= 3 && ((DiceSValue[1] != DiceSValue[2]) || (DiceSValue[2] != DiceSValue[3])))
     {
         document.getElementById('Status_Text').innerHTML = ("☆★Full House!!☆★")
         FullHouse = true
@@ -200,13 +235,9 @@ function afterrecord() //점수 결정 후 초기화함수
     
 
     Remain = Remain - 1
-    alert("Turn Change")
+    
     if(Remain == 0)
-    {
-        console.log(Player1)
-        console.log(Player2)
-        console.log(Player3)
-        console.log(Player4)
+    {        
         var maxarr = []
         maxarr[0] = Player1
         maxarr[1] = Player2
@@ -216,7 +247,6 @@ function afterrecord() //점수 결정 후 초기화함수
         max = (Player1 > Player2)? Player1 : Player2;
         max = (max > Player3)? max : Player3;
         max = (max > Player4)? max : Player4;
-        console.log(max)
         for (var j = 0; j < 4; j++)
         {
             if(max == maxarr[j])
@@ -227,11 +257,15 @@ function afterrecord() //점수 결정 후 초기화함수
             }
         }
     }
-    Sub = 0
-    count = 0
-    special_reset()
-    playerturn()
-    rolldice()
+    else{
+        alert("Turn Change")
+        Sub = 0
+        count = 0
+        special_reset()
+        playerturn()
+        rolldice()
+    }
+    
 }
 
 // ============== 보너스 점수 계산 ===============
